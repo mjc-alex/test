@@ -12,5 +12,5 @@
 #define true 1
 #define false 0
 #define P printf
-
+typedef uint32_t word_t;
 #endif
