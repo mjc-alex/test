@@ -9,15 +9,13 @@ int main(){
 	//printf("%ld\t%ld\n",x,y);
 	int s = 0;
 	asm("mov  $0x0, %%eax;"
-			 "mov	 $0x10,%%ecx;"
-			".loop:;"
-				"cmp  %%ecx, %%eax;"
-				"jge  .ret;"
-				"add $0x1 , %1;"
+			 "mov	 $0x3,%%ecx;"
+			 ".loop:cmp  %%ecx, %%eax;"
+			 "jge  .ret;"
+			  "add $0x1 , %1;"
 				"add  $0x1, %%eax;"
 				"jmp  .loop;"
-			".ret:;"
-				"retq"  
+			".ret:retq"  
 			:"=b"(s)
 			:"b"(s)
 	);
