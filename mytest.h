@@ -1,3 +1,4 @@
+#pragma once
 #ifndef _MY_TEST_
 #define _MY_TEST_
 
