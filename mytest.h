@@ -12,5 +12,5 @@
 #define true 1
 #define false 0
 #define P printf
-
+uint64_t x = 10;
 #endif
