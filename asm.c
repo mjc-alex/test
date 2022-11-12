@@ -8,21 +8,19 @@ int main(){
 	// 	 );
 	// printf("%ld\t%ld\n",x,y);
 	int s = 0;
-	size_t n = 6,i = 0;
-	char dest[50],src[50] = "abcdefjhg";
-	int element = 0;
-	// for (i = 0; i<20; i++){
-    // 	src[i] = element;
-	// 	element++;
-  	// }
+	size_t n = 8,i = 0;
+	int src[50],dest[50];
+	for (i = 0; i<n; i++){
+    	src[i] = i;
+  	}
 	i = 0;
 	asm(".loop:"
       "cmpq $0 , %0;"
       "je .exit;"
-      "leaq (%2,%1,1), %2;"
-      "leaq (%3,%1,1), %3;"
-	  "movb (%3), %%cl;"
-      "movb %%cl, (%2);"
+      "leaq (%2,%1,4), %2;"
+      "leaq (%3,%1,4), %3;"
+	  "movl (%3), %%ecx;"
+      "movl %%ecx, (%2);"
       "incq %1;"
       ".exit:"
       "cmpq %0,%1;"
@@ -32,8 +30,8 @@ int main(){
       :"memory","cc","%ecx"
       );
 	//memcpy(dest,src,strlen(src));
-	for (i = 0;i < 6; i++){
-		P("%c\n",dest[i]);
+	for (i = 0;i < n; i++){
+		P("%d\n",dest[i]);
 	}
 	return 0;
 }
