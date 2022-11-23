@@ -1,3 +1,4 @@
+#pragma once
 #ifndef _MY_TEST_
 #define _MY_TEST_
 
@@ -12,5 +13,5 @@
 #define true 1
 #define false 0
 #define P printf
-
+uint64_t x = 10;
 #endif
